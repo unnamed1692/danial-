@@ -1,0 +1,851 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textheight 22.5truecm \textwidth 15truecm
+\setlength{\oddsidemargin}{-0.00in}
+\setlength{\topmargin}{-.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{authblk}
+\usepackage{amssymb}
+\usepackage[all]{xy}
+\usepackage{mathrsfs}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{extarrows}
+%\usepackage[mathscr]{eucal}
+\usepackage{mathrsfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\to{\rightarrow}
+\def\f{\mathfrak}
+\def\m{\mathbb}
+\def\c{\mathcal}
+\def\b{\mathbf}
+\def\r{\mathrm}
+\def\bb{\mathbb}
+\def\s{\mathscr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%\ttfamily
+%\sffamily
+%\bfseries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Harmonic Analysis on Quantum Groups}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Maysam Maysami Sadr
+\thanks{sadr@iasbs.ac.ir}
+}
+\affil{Department of Mathematics, Institute for Advanced Studies in Basic Sciences, Zanjan, Iran}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{abstract}
+%\textbf{MSC 2010.}
+%\textbf{Keywords.}
+%\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General Information and Explanations}
+In literatures the phrase `quantum group' refer to an algebra (over a ring) with a type of comultiplication which satisfies some conditions
+analogues to the properties of a Hopf algebra. Of course many authors call Hopf algebras also quantum groups. Also, some authors
+refers to such objects as `quantum groups' if the underlying algebra is over the field of complex numbers, the algebra is involutive, and
+the algebra is not commutative and is not cocommutative.
+In this section we address some general information, references, and terminology of the very vast theory of quantum groups.
+See also \cite{Van-Daele8} for some similar discussions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{References for Some Preliminaries}
+Besides some general information in algebra, C*-algebra, and harmonic analysis, all the other preliminaries that we will need are given in
+\cite{Van-Daele7}, appendixes of \cite{MasudaNakagamiWoronowicz1}, and the appendix of \cite{Van-Daele2}.
+See for Sweedler notation see \cite[Section 2]{Van-Daele7}. For a good source for Tomita-Takesaki modular theory see \cite{Lledo1}.
+See \cite[Example 2.9]{Lledo1} for the relation between modular functions for locally compact groups and modular theory.
+For basic von Neumann algebra theory \cite{Uijlen1} is also a good source.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Locally Compact Groups}
+A good reference is \cite{DeitmarEchterhoff1}. By a locally compact group we mean a group $G$ together with a locally compact Hausdorff
+topology on $G$ such that the structural group mappings $G\times G\to G, G\to G$, given by $(g,h)\mapsto gh$ and $g\mapsto g^{-1}$
+are continuous. Let $G$ be a locally compact group. There exists a Borel regular measure $\lambda$ on $G$ such that is left invariant
+(i.e. $\lambda(gB)=\lambda(B)$ for every $g\in G$ and any Borel subset $B\subseteq G$) and $\r{supp}(\lambda)=G$ (i.e. $\lambda$ is
+nonzero on any nonempty open subset of $G$). Such a measure $\lambda$ is called a left Haar measure. The right Haar measures
+are defined similarly. If $\lambda,\lambda'$ are left Haar measures on $G$ then there is a strictly positive real $r$ such that $\lambda'=r\lambda$.
+The similar fact is satisfied for right Haar measures. If $\lambda$ is a left Haar measure then $\rho$ defined by $\rho(B)=\lambda(B^{-1})$
+for Borel subsets of $G$, is a right Haar measure. $G$ is called unimodular if every left Haar measure is also a right Haar measure.
+Any abelian or compact group is unimodular.\\
+Let $\lambda$ be a left Haar measure on $G$. Then for every $g\in G$, the assignment
+$B\mapsto\lambda(Bg)$ defines another left Haar measure $\lambda_g$, and thus there is a positive real $\Delta(g)$ such that
+$\lambda_g=\Delta(g)\lambda$. It is not hard to see that $\Delta$ is a continuous group homomorphism from $G$ to the multiplicative group
+$\bb{R}^+$. It is clear that $G$ is unimodular if and only if $\Delta=1$.\\
+Let $G$ be an abelian locally compact group. Let $\widehat{G}$ denote the set of all continuous
+group homomorphisms from $G$ to the circle $\bb{T}$. Then $\widehat{G}$ with the pointwise multiplication and compact-open topology
+is an abelian locally compact group. $\widehat{G}$ is called Pontryagin dual of $G$. The canonical mapping $G\to\widehat{\widehat{G}}$
+is an isomorphism of locally compact groups. The dual of an abelian compact group is an abelian discrete group and the dual of an abelian
+discrete group is an abelian compact group.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Groupoids}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Locally Compact Groupoids}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hopf Algebras}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{C*-Hopf Algebras}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Co-Involutive Hopf von Neumann Algebras\\(von Neumann Algebraic Setting, Ernest)}
+The best reference with all preliminaries is \cite[Chapter 1]{EnockSchwartz1}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kac Algebras\\(von Neumann Algebraic Setting, Enock-Schwartz)}
+The best reference with all preliminaries is \cite[Chapter 2]{EnockSchwartz1}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Compact Quantum Groups\\(C*-Algebraic Setting, Woronowicz)}\label{2001301307}
+The main paper is \cite{Woronowicz1}. The basic examples are given in \cite{Woronowicz2}.
+See also \cite{MaesVan-Daele1} or \cite[Chapter 1]{NeshveyevTuset1} for more details.
+See \cite[Proposition 3.2]{MaesVan-Daele1} for the proof of the fact that any compact semigroup
+with left and right cancelation properties is a group. See \cite[Section 8]{MaesVan-Daele1} for the proof that the dual of any compact
+quantum group is a discrete quantum group in the sense of Subsection \ref{2001281638}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Locally Compact Quantum Groups\\(Reduced, C*-Algebraic Setting, Kustermans-Vaes}
+\cite{KustermansVaes1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Locally Compact Quantum Groups\\(von Neumann Algebraic Setting, Kustermans-Vaes}
+\cite{KustermansVaes2} See also \cite{Van-Daele5} and \cite{Van-Daele4}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Locally Compact Quantum Groups\\(Universal, C*-Algebraic Setting, Kustermans}
+\cite{Kustermans1}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Weighted Hopf C*-algebras\\(C*-Algebraic Setting, Masuda-Nakagami-Woronowicz}
+\cite{MasudaNakagamiWoronowicz1}
+Closed with respect to duality and second dual is identity
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Discrete Quantum Groups\\(Purely Algebraic and Matrix Setting, Van Daele)}\label{2001281638}
+The main paper is \cite{Van-Daele6}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Quantum Hypergroups\\(Purely Algebraic Setting, Delvaux-Van Daele)}
+The main paper is \cite{DelvauxVan-Daele1}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiplier Hopf Algebras\\(Purely Algebraic Setting, Van Daele)}
+The main reference is \cite{Van-Daele2}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Quantum Groups\\(Purely Algebraic Setting, Van Daele)}\label{2001301257}
+An algebraic quantum group is a regular multiplier algebra with integrals. The main reference is \cite{Van-Daele1}.
+See also the paper of Van Daele and Zhang in \cite{CaenepeelVan-Oystaeyen1}.
+The category of algebraic quantum groups has a perfect duality theory. Also these objects has two subclasses discrete type
+and compact type which are dual of each other. See the Subsections \ref{2001301300} and \ref{2001301301}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Quantum Groups of Discrete Type\\(Purely Algebraic Setting, Van Daele)}\label{2001301300}
+The main reference is \cite{Van-Daele1}. An algebraic quantum group $A$ as in \ref{2001301257} is called of discrete type
+if there is $h\in A$ with the property that $ah=\epsilon(a)h$ for every $a\in A$.
+Any discrete quantum group as in \ref{2001281638} is an algebraic quantum group of discrete type but the
+converse is not true in general.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Quantum Groups of Compact Type\\(Purely Algebraic Setting, Van Daele)}\label{2001301301}
+The main reference is \cite{Van-Daele1}. An algebraic quantum group $A$ is called of type compact if $A$ is unital.
+Any compact quantum group as in \ref{2001301307}. Any compact quantum group as in \ref{2001301307} has a dense *-subalgebra
+which is an algebraic quantum group of compact type. See \cite[Theorem 1.2]{Woronowicz2} and also \cite{DijkhuizenKoornwinder1}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Weak Multiplier Hopf Algebras\\(Purely Algebraic Setting, Van Daele-Wang)}\label{2001301959}
+The theory is developed in \cite{Van-DaeleWang1,Van-DaeleWang2,Van-DaeleWang3}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Quantum Groupoid\\(Purely Algebraic Setting, Van Daele-Wang)}
+It is a weak multiplier Hopf algebra as in \ref{2001301959} which is regular and has enough integrals.
+(See the abstract of \cite{TimmermannVan-DaeleWang1} for the name.)
+The theory is developed in \cite{Van-Daele9,Van-DaeleWang1,Van-DaeleWang2,Van-DaeleWang3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Regular Multiplier Hopf Algebroids\\(Purely Algebraic Setting, Timmermann-Van Daele)}\label{2001302033}
+The main paper is \cite{TimmermannVan-Daele1}.
+See \cite{TimmermannVan-Daele2} for relation between weak multiplier Hopf algebras and multiplier Hopf algebroids.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Algebraic Quantum Groupoid\\(Purely Algebraic Setting, Timmermann)}
+It is a regular multiplier Hopf algebroid as in \ref{2001302033} with a single faithful integral.
+(See the abstract of \cite{TimmermannVan-DaeleWang1} for the name.)
+The theory is developed in papers \cite{Timmermann1,Timmermann2}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Locally Compact Quantum Groupoid\\(C*-Algebraic Setting, Kahng-Van Daele)}
+The theory is developed in papers \cite{KahngVan-Daele1,KahngVan-Daele2}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Duality}
+One of the main references is \cite[Introductin]{EnockSchwartz1}.
+The first paragraph of the introduction of \cite{MasudaNakagami1}:
+``Classical Lie groups are important examples in the category of locally compact
+groups. The general theory of unitary representations is developed for these objects as
+harmonic analysis, which provides us a good theoretical framework for the detailed
+study of the unitary representations of the classical Lie groups. This is regarded as an
+extension of the Fourier analysis to a general context. For a locally compact group, its
+dual i.e. the set of all the equivalence classes of irreducible unitary representations
+plays an important role, and the duality established by Pontrjagin for Abelian groups,
+Tannaka and Krein for compact groups, Steinspring for unimodular groups, Eymard
+and Tatsuuma for locally compact groups is an important theoretical basis for the
+harmonic analysis. On the other hand, at the formal level in the framework of pure
+algebras, we use the notion of Hopf algebras to deal with the algebraic groups, discrete
+groups, or the dual of those objects at the same time. Then functional analysis is
+necessarily combined with the algebraic framework of Hopf algebras to have a good
+control with the infinite dimensional unitary representations. This theory, especially
+the argument utilized by Steinspring, suggests us to introduce the notion of Kac
+algebras in the language of von Neumann algebras. The first take off from the group or
+the group algebra to the Kac algebra was considered by Kac \cite{Kac1} and performed by
+Takesaki \cite{Takesaki1} by introducing the, so-called, Kac-Takesaki operator or the fundamental
+operator for the semifinite i.e. the unimodular case, and then completed by Enock and
+Schwartz for the general case, in which the above mentioned duality was
+established by Takesaki, Enock and Schwartz, and others \cite{StratilaVoiclescue1,VainermanKac1}.''
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Character and Super Character Theory}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fourier Transform}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Amenability}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ph.D. Proposal: Some Aspects of Harmonic Analysis in Van Daele Category of Quantum Groups}
+One of the extensively studied objects in mathematics is Hopf algebra.
+Hopf algebras naturally appear in the abstract theory of rings and modules, in quantum algebra, in topological quantum field theory,
+as the space of symmetries of quantum systems in mathematical physics, and in the mathematically rigorous theory of renormalization
+of Feynman integrals. As it is well-known, in comparison with finite dimensional case, infinite dimensional
+Hopf algebras are not so well-behaved objects from the purely algebraic viewpoint. In order to overcome this difficulty,
+Van Daele introduced the notion of `multiplier Hopf algebra' in \cite{Van-Daele2}. It was recognized soon that the framework
+of the theory of multiplier Hopf algebras is very relevant to study of various types of quantum groups.
+Let $\b{D}$ denote a category whose objects are regular multiplier Hopf algebras with
+invariant integrals, together with appropriate morphisms \cite{Van-Daele1}. We call $\b{D}$ Van Daele category
+of quantum groups. The category $\b{D}$ has the following specificities:
+\begin{enumerate}
+\item[$\bullet$] $\b{D}$ contains multiplier Hopf algebras of discrete type \cite{Van-DaeleZhang2}.
+\item[$\bullet$] Compact quantum groups \cite{Woronowicz1} can be considered as objects of $\b{D}$ of compact type.
+\item[$\bullet$] The categories of compact and discrete groups can be canonically embedded in $\b{D}$.
+\item[$\bullet$] Pontryagin duality between abelian compact and abelian discrete ordinary groups can be
+generalized to a self-duality of $\b{D}$ \cite{Van-Daele1}.
+\end{enumerate}
+Van Dale and Wang in a series papers \cite{Van-DaeleWang1,Van-DaeleWang2,Van-DaeleWang3,Van-DaeleWang4}
+have introduced the concept of weak multiplier Hopf-algebra. This concept can be considered as a Hopf algebraic analogue of the concept
+of groupoid. We let $\b{D}_\r{w}$ denote the the category whose objects are regular weak multiplier Hopf algebras with
+sufficiently many integrals. We call $\b{D}_\r{w}$ Van Daele category of quantum groupoids. $\b{D}$ can be considered as a full
+subcategory of $\b{D}_\r{w}$. Also, it has been shown recently \cite{Van-DaeleWang4} that the self-duality of $\b{D}$
+can be extended to a self-duality of $\b{D}_\r{w}$.
+
+The aim of the thesis will be the study of some aspects of harmonic analysis in the Van Daele categories $\b{D}$ and $\b{D}_\r{w}$.
+Specifically, we will consider the following problems.
+\begin{problem}
+\emph{A character on a (discrete) group is the composition of a finite dimensional representation of that group with the usual trace
+on matrixes. Using irreducible characters on a group, one can associate an algebra to the group, called representation ring of the group, which
+reflects all information encoded in the representation theory of the group. A supercharacter theory consists of a collection of
+`approximately' irreducible characters satisfying certain axioms. The notion of `Supercharacter theory' originally has been defined
+by Diaconis and Isaacs \cite{DiaconisIsaacs1} for finite groups. Recently, Keller in his thesis \cite{Keller1},
+has generalized this theory and a related one called `theory of Schur rings' for an arbitrary finite dimensional Hopf-algebra. Also,
+the theory of Schur rings has generalized recently for infinite groups in \cite{Bastian...1}.
+One of the problems of the thesis, is to generalize supercharacter theory and theory of Schur rings for
+at least objects of discrete type in $\b{D}$.
+(Note that the thesis \cite{Keller1} has all relevant definitions and notions.
+Also for character theory and representation rings see \cite{Isaacs1}. For a very good introduction to supercharacter theories and Schur rings see
+\cite{Hendrickson1,Hendrickson2,Hendrickson3,Hendrickson4}.)}
+\end{problem}
+\begin{problem}
+\emph{Consider the various aspects of harmonic analysis of groupoids (see \cite{Westman1} and its cites in Google Scholar)
+for objects of $\b{D}_\r{w}$. An interesting and straightforward problem is to consider the analogue of Brandt groupoid
+\cite{Sadr1,SadrPourabbas1} in $\b{D}_\r{w}$.}
+\end{problem}
+\begin{problem}
+\emph{According to Bohr doctrine in quantum physics, all observable information of a quantum system in quantum laboratory,
+are encoded in the classical parts of the mathematical models of the system.
+Rigorously formulation of the Bohr doctrine, in these days, is called by mathematicians Bohrification of mathematical models of quantum systems
+\cite{HeunenLandsmanSpitters1,Landsman1}. Recently, there are many attentions to Bohrification in noncommutative geometry,
+see for example \cite{De-SilvaBarbosa1}. It seems that Bohrification will be a hot theme for research by mathematicians. So,
+considering Bohrification for quantum groups must be a good problem. In the context of quantum group theory,
+Bohrification, roughly speaking, means extracting the information
+encoded in a multiplier Hopf algebra from its commutative subalgebras. I strongly suggest that Bohrification of quantum groups,
+at least for objects of compact type in $\b{D}$, can be established very well.}
+\end{problem}
+\begin{problem}
+\emph{Abstract pseudodifferential operators on compact groups and finite abelian groups have been
+considered in \cite{MolahajlooPirhayati1,MolahajlooWong1}. It seems that, using Fourier theory in $\b{D}$ \cite{Van-Daele3},
+pseudodifferential operators can be defined for objects of $\b{D}$ in the algebraic level, or for compact quantum groups
+in the analytical level. Pseudodifferential operators on compact groups, recently is considered by Majid and his coworkers in
+\cite{AkylzhanovMajidRuzhansky1}. But Majid's approach is seemingly very different from our approach. Comparing the two approach is also
+a good problem.}
+\end{problem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\footnotesize\begin{thebibliography}{22}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{AkylzhanovMajidRuzhansky1}
+R. Akylzhanov, S. Majid, M. Ruzhansky,
+\emph{Smooth dense subalgebras and Fourier multipliers on compact quantum groups},
+Communications in Mathematical Physics 362, no. 3 (2018): 761--799.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Bastian...1}
+N. Bastian, J. Brewer, S. Humphries, A. Misseldine, C. Thompson,
+\emph{On Schur rings over infinite groups},
+Algebras and Representation Theory (2018): 1--19.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{CaenepeelVan-Oystaeyen1}
+S. Caenepeel, F Van Oystaeyen,
+\emph{Hopf algebras and quantum groups},
+CRC Press, 2000.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{De-SilvaBarbosa1}
+N. De Silva, R.S. Barbosa,
+\emph{Contextuality and noncommutative geometry in quantum mechanics},
+arXiv:1806.02840 (2018).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{DeitmarEchterhoff1}
+A. Deitmar, S. Echterhoff,
+\emph{Principles of harmonic analysis},
+Springer, 2014.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{DelvauxVan-Daele1}
+L. Delvaux, A. Van Daele,
+\emph{Algebraic quantum hypergroups}
+Advances in Mathematics 226, no. 2 (2011): 1134--1167.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{DiaconisIsaacs1}
+P. Diaconis, I. Isaacs,
+\emph{Supercharacters and superclasses for algebra groups},
+Transactions of the American Mathematical Society 360, no. 5 (2008): 2359--2392.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{DijkhuizenKoornwinder1}
+M. Dijkhuizen, T. Koornwinder,
+\emph{CQG algebras: A direct algebraic approach to compact quantum groups}
+Lett. Math. Phys. 32 (1994), 315--330.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{EnockSchwartz1}
+M. Enock, J.-M. Schwartz,
+\emph{Kac algebras and duality of locally compact groups},
+Springer Science \& Business Media, 2013.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Hendrickson1}
+A.O.F. Hendrickson,
+\emph{Supercharacter theories, research statement},
+faculty.cord.edu/ahendric.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Hendrickson2}
+A.O.F. Hendrickson,
+\emph{Construction of supercharacter theories of finite groups},
+arXiv:0905.3538 (2009).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Hendrickson3}
+A.O.F. Hendrickson,
+\emph{Supercharacter theories and Schur rings},
+arXiv:1006.1363 (2010).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Hendrickson4}
+A.O.F. Hendrickson,
+\emph{Supercharacter theory constructions corresponding to Schur ring products},
+Communications in Algebra 40, no. 12 (2012): 4420--4438.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{HeunenLandsmanSpitters1}
+C. Heunen, N.P. Landsman, B. Spitters,
+\emph{Bohrification},
+arXiv:0909.3468 (2009).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{IllanesNadler1}
+A. Illanes, S. Nadler,
+\emph{Hyperspaces: fundamentals and recent advances},
+Vol. 216 CRC Press, 1999.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Isaacs1}
+I.M. Isaacs,
+\emph{Character theory of finite groups},
+Vol. 69. Courier Corporation, 1994.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Kac1}
+G.I. Kac,
+\emph{Generalization of the group principle of duality}
+Soviet Math, Dokl., 2(1961), 581--584.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{KahngVan-Daele1}
+B.-J. Kahng, A. Van Daele,
+\emph{A class of C*-algebraic locally compact quantum groupoids part I. Motivation and definition},
+International Journal of Mathematics 29, no. 04 (2018): 1850029.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{KahngVan-Daele2}
+B.-J. Kahng, A. Van Daele,
+\emph{A class of C*-algebraic locally compact quantum groupoids Part II, Main theory},
+Advances in Mathematics 354 (2019): 106761.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Keller1}
+J.C. Keller,
+\emph{Generalized supercharacter theories and Schur rings for Hopf algebras},
+Ph.D. Thesis, University of Colorado (2014).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Kustermans1}
+J. Kustermans
+\emph{Locally compact quantum groups in the universal setting},
+International Journal of Mathematics 12, no. 03 (2001): 289--338.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{KustermansVaes2}
+J. Kustermans, S. Vaes
+\emph{Locally compact quantum groups in the von Neumann algebraic setting},
+Mathematica Scandinavica (2003): 68--92.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{KustermansVaes1}
+J. Kustermans, S. Vaes
+\emph{Locally compact quantum groups},
+Annales Scientifiques de l’Ecole Normale Supérieure, vol. 33, no. 6, pp. 837--934.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Landsman1}
+K. Landsman,
+\emph{Bohrification: from classical concepts to commutative algebras},
+arXiv:1601.02794 (2016).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Lledo1}
+F. Lledo,
+\emph{Modular Theory by example},
+(2009).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{MaesVan-Daele1}
+A. Maes, A. Van Daele,
+\emph{Notes on compact quantum groups}
+(1998).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{MasudaNakagami1}
+T. Masuda, Y. Nakagami,
+\emph{A von Neumann algebra framework for the duality of the quantum groupss},
+Publ. RIMS Kyoto Univ., 30(1994), 799--850.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{MasudaNakagamiWoronowicz1}
+T. Masuda, Y. Nakagami, S.L. Woronowicz,
+\emph{A C*-algebraic framework for quantum groups},
+International Journal of Mathematics 14, no. 09 (2003): 903--1001.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{MolahajlooPirhayati1}
+S. Molahajloo, M. Pirhayati,
+\emph{Traces of pseudo-differential operators on compact and Hausdorff groups},
+Journal of Pseudo-Differential Operators and Applications 4, no. 3 (2013): 361--369
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{MolahajlooWong1}
+S. Molahajloo, K.L. Wong,
+\emph{Pseudo-differential operators on finite abelian groups},
+Journal of Pseudo-Differential Operators and Applications 6, no. 1 (2015): 1--9.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{NeshveyevTuset1}
+S. Neshveyev, L. Tuset,
+\emph{Compact quantum groups and their representation categories},
+Vol. 20 Paris: Societe mathematique de France, 2013.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Sadr1}
+M.M. Sadr,
+\emph{Pseudo-amenability of Brandt semigroup algebras},
+Comm. Math. Univ. Carolinae, vol. 50 (2009), 413--419.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{SadrPourabbas1}
+M.M. Sadr, A. Pourabbas,
+\emph{Approximate amenability of Banach category algebras with application to semigroup algebras},
+Semigroup Forum, 79 (2009), 55--64.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{StratilaVoiclescue1}
+S. Stratila, D. Voiclescue,
+\emph{On the crossed products, I, II}
+Rev. Roum. Math. Pures Appl., 21 (1976), 1411--1449; 22 (1977), 83--117.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Takesaki1}
+M. Takesaki,
+\emph{Duality and von Neumann algebras},
+Lecture Notes in Math., 247(1972), 665--779,
+Springer-Verlag, Berlin-Heiderberg-New York.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Timmermann1}
+T. Timmermann,
+\emph{Integration on algebraic quantum groupoids},
+Int. J. Math. 27 (2016).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Timmermann2}
+T. Timmermann,
+\emph{On duality of algebraic quantum groupoids},
+Adv. in Math. 309 (2017) 692–-746.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{TimmermannVan-Daele1}
+T. Timmermann, A. Van Daele,
+\emph{Regular multiplier Hopf algebroids, Basic theory and examples},
+Commun. Alg. 46 (2017), 1926--1958.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{TimmermannVan-Daele2}
+T. Timmermann, A. Van Daele,
+\emph{Multiplier Hopf algebroids arising from weak multiplier Hopf algebras},
+Banach Center Publications, 106 (2015), 73-–110.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{TimmermannVan-DaeleWang1}
+T. Timmermann, A. Van Daele, S. Wang,
+\emph{Pairing and duality of algebraic quantum groupoids},
+(2019).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Uijlen1}
+S. Uijlen,
+\emph{Categorical Aspects of von Neumann Algebras and AW*-algebras}
+2013.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{VainermanKac1}
+L.I. Vainerman, G.I. Kac,
+\emph{Non unimodular ring groups and Hopf-von Neumann algebras},
+Math, USSR Sbornik, 23 (1974), 185--214.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele2}
+A. Van Daele,
+\emph{Multiplier Hopf algebras},
+Trans. Amer. Math. Soc. 342 (1994), 917--932.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele1}
+A. Van Daele,
+\emph{An algebraic framework for group duality},
+Advances in Mathematics 140, no. 2 (1998): 323--366.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele3}
+A. Van Daele,
+\emph{The Fourier transform in quantum group theory},
+arXiv preprint math/0609502 (2006).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele4}
+A. Van Daele,
+\emph{Locally compact quantum groups: the von Neumann algebra versus the C*-algebra approach}
+Bull. Kerala Math. Assoc. (2005), 153--177.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele5}
+A. Van Daele,
+\emph{Locally compact quantum groups: A von Neumann algebra approach},
+(2006).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele6}
+A. Van Daele,
+\emph{Discrete Quantum Groups},
+Discrete Quantum Groups, Journal of Algebra 180 (1996), 431--444.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele7}
+A. Van Daele,
+\emph{Tools for working with multiplier Hopf algebras},
+(2008)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele8}
+Van Daele,
+\emph{From Hopf algebras to topological quantum groups A short history, various aspects and some problems},
+(2019).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-Daele9}
+Van Daele,
+\emph{Algebraic quantum groupoids, An example},
+(2017).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-DaeleWang1}
+A. Van Daele, S. Wang,
+\emph{Weak multiplier Hopf algebras, preliminaries, motivation and basic examples},
+arXiv:1210.3954 (2012).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-DaeleWang2}
+A. Van Daele, S. Wang,
+\emph{Weak multiplier Hopf algebras I, the main theory},
+Journal für Die Reine und Angewandte Mathematik (Crelles Journal), 2015(705), pp.155--209.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-DaeleWang3}
+A. Van Daele, S. Wang,
+\emph{Weak multiplier Hopf algebras II, the source and target algebras},
+arXiv:1403.7906 (2014).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-DaeleWang4}
+A. Van Daele, S. Wang,
+\emph{Weak multiplier Hopf algebras III, Integrals and Duality},
+arXiv:1701.04951 (2017).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Van-DaeleZhang2}
+A. Van Daele, Y. Zhang,
+\emph{Multiplier Hopf algebras of discrete type},
+Journal of Algebra 214, no. 2 (1999): 400-417.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Westman1}
+J. Westman,
+\emph{Harmonic analysis on groupoids},
+Pacific Journal of Mathematics 27, no. 3 (1968): 621--632.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Woronowicz1}
+S.L. Woronowicz,
+\emph{Compact quantum groups},
+Sym\'{e}tries Quantiques (Les Houches, 1995) 845, no. 884 (1998): 98.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Woronowicz2}
+S.L. Woronowicz,
+\emph{Compact matrix pseudogroups},
+Communications in Mathematical Physics 111, no. 4 (1987): 613--665.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{thebibliography}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Uijlen}
+S. Uijlen,
+\emph{Categorical Aspects of von Neumann Algebras and AW*-algebras}
+2013.
+Uijlen Categorical Aspects of von Neumann Algebras and AW-star-algebras
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{}
+\emph{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
